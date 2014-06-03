@@ -1,0 +1,21 @@
+
+<h2>{{selectedFile.name}}</h2>
+
+<button class="btn btn-primary" ng-click="convert()">Convert again</button>
+<button class="btn btn-primary" ng-click="publish()">Publish</button>
+<hr>
+
+<div class="container files-list-section col-lg-12">
+	<div class="carosel-container">
+		<carousel interval="-1">
+      		<slide ng-repeat="content in selectedFile.content" active="slide.active">
+        		<section class="carousel-image col-lg-6">
+        			<img ng-src="{{content.image}}" style="margin:auto;">
+        		</section>
+        		<section class="carousel-text col-lg-6" strip-br="true" ng-model="content.text" contenteditable>
+        		
+				</section>
+        	</slide>
+        </carousel>
+	</div>
+</div>

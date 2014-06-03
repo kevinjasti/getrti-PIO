@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>get R.T.I</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <!-- Font awesome for icons & other fonts from Google fonts -->    
+    <link href="assets/css/fonts.css" rel="stylesheet">    
+    <!-- Custom styles for this template -->
+    <link href="assets/css/app.css" rel="stylesheet">
+    
+    
+  </head>
+
+<body style="">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" ng-controller="NavCtrl" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">GetRTI</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav" nav-tabs>
+            <li><a href="#/search">Search</a></li>
+            <li><a href="#/browse">Browse</a></li>
+            <!--<li><a href="#/visualization">Visualization</a></li>-->
+            <li><a href="#/reports">Analyze</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" nav-tabs>
+            <li><a href="#/files">Manage</a></li>          
+            <li ng-show="!loggedIn"><a href="#/login">Sign In</a></li>
+            <li ng-show="loggedIn"><a ng-click="logout()" href="#">Sign Out</a></li>
+            <li ng-show="!loggedIn"><a href="#/signup">Sign Up</a></li>
+          </ul>
+        </div>        
+      </div>
+    </div>
+
+    <div class="container" role="main" id = "main">
+      <div ng-view>
+      </div>
+    </div><!--//main-->
+  <div id="footer">
+    <div class="container">
+        <p class="text-muted"> © 2014 | <a href="#/about">About</a> | <a href="#contact">Contact</a></p>
+    </div>
+  </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/underscore.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+  
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.min.js"></script>
+  <script src="http://bazalt-cms.com/assets/ng-table/0.3.0/ng-table.js"></script>
+
+  <!-- // <script src="lib/angular/angular.js"></script> -->
+  <!-- // <script src="js/angular-route.min.js"></script> -->
+  <!-- // <script src="js/ng-table.js"></script> -->
+
+  <script src="js/angular-ui.js"></script>
+  <script src="js/angular-cookies.js"></script>
+  <script src="js/angular-file-upload.min.js"></script>
+  
+
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+</body>
+</html>

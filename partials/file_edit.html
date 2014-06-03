@@ -1,0 +1,82 @@
+<script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({selector: "textarea",menubar:false, statusbar: false});
+	 // Automatically change the height of the editor & file window based on window resize
+	function fixHeightOfTheText(iMoreInfo) {    
+	    var h = window.innerHeight ;
+	    
+	    //the height of the texteditor will change depending on whether or not moreInfo div is shown
+	    if($(".rowMoreInfo").is(':hidden'))
+	    {    
+		    var txtHeight = (h - 245) + "px";
+		}
+		else
+		{
+		    var txtHeight = (h - 397) + "px";
+		}
+	    var textElement = tinymce.DOM.get('txtContent_ifr');
+	    tinymce.DOM.setStyle(textElement, 'height', txtHeight);
+	    tinymce.DOM.setStyle(textElement, 'width', '90%');
+
+	    var fileHeight = (h - 175) + "px";
+	    $("#iFile").attr("style","height:" + fileHeight);
+	}
+	window.onresize = fixHeightOfTheText;
+	window.onload = fixHeightOfTheText;
+ 	function showMoreInfo()
+ 	{
+		$( ".rowMoreInfo" ).slideToggle(function() {fixHeightOfTheText();}); 		
+ 		$("#toggleMoreInfo").toggleClass("fa-angle-double-up");
+ 		$("#toggleMoreInfo").toggleClass("fa-angle-double-down");
+ 		$(".btnMore").toggleClass("showMoreActive");
+ 	}
+
+</script>
+
+<div class="container files-reader col-lg-6">
+	<div class = "rowPages">
+		<ul class="paginate pag1 clearfix">
+		  <li><a href="#">Previous</a></li> 
+		  <li class="current">1</li>
+		  <li><a href="index-2.html">2</a></li>
+		  <li><a href="index-3.html">3</a></li>
+		  <li><a href="index-4.html">4</a></li>
+		  <li><a href="index-5.html">5</a></li>
+		  <li><a href="index-5.html">..</a></li>
+		  <li><a href="index-2.html">Next</a></li>
+		  <li class="single">Page 1 of 65</li>
+		  
+		</ul>
+	</div>
+	<iframe id = "iFile" src = "../files/6.pdf" frameborder="0"></iframe>
+</div><!--//left side col for PDF-->
+<div class="container file-actions col-lg-6">
+	<form method="post">
+		<div class = "rowInfo">
+			<span class = "txtNumber">1</span>Verify the document and correct any mistakes you might find.
+		</div>
+	    <textarea id = "txtContent"></textarea>
+	    <div class = "rowMoreInfo displayNone">
+			  <div class="control-group">
+			    <label class="control-label" for="inputEmail">Department</label>
+			    <select><option></option></select>
+			  </div>
+			  <div class="control-group">
+			    <label class="control-label" for="inputPassword">Region</label>
+			    <select><option></option></select>
+			  </div>
+	    </div>
+	    <div class = "rowTxt">
+	    	<span class = "txtNumber">2</span>
+	    	<input type = "text" id = "txtTags" placeholder="Add some tags that will help others locate this document.">
+	    	<span class = "txtMore"><a class = "btnMore" href = "Javascript:showMoreInfo();"><i id = "toggleMoreInfo" class="fa fa-angle-double-up fa-fs"></i></a></span>
+	    </div>
+	    
+		<div class = "rowAction">
+			<span class = "txtNumber">3</span>
+			<button type = "submit" class = "btn btn-primary btnSave"><i class="fa fa-save fa-fs"></i> Save Draft</button>
+			<button type = "submit" class = "btn btn-secondary btnPublish"><i class="fa fa-share fa-fs"></i> Publish </button>
+		</div>
+	</form>      
+</div><!--//right side for text editor-->
+

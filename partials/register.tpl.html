@@ -1,0 +1,28 @@
+    <form class="form-signin" id="registerForm" name="registerForm" ng-submit="signup()">
+        <h2 class="form-signin-heading">New User</h2>
+        <div class = "form-signin-subheading">
+			Register to add new documents related to RTI
+        </div>
+
+        <div class="form-input name">
+        	<i class="fa fa-arrow-right fa-fw"></i>
+            <input class="form-control" ng-model="user.fullname" placeholder="Full Name" ng-required="true" type="text">
+        </div>
+
+        <div class="form-input email">
+        	<i class="fa fa-envelope fa-fw"></i>
+            <input class="form-control email" ng-required="true" ng-model="user.email" placeholder="E-Mail" type="email">
+        </div>
+
+        <div class="form-input username">
+        	<i class="fa fa-user fa-fw"></i>
+            <input autofocus="true" class="form-control" ng-required="true" ng-model="user.username" placeholder="Username" type="text">
+        </div>
+
+        <div class="form-input password">
+        	<i class="fa fa-lock fa-fw" id = "passwordTall"></i>
+            <input class="form-control password" ng-required="true" ng-model="user.password" placeholder= "Password" type="password"> 
+            <input class="form-control password2" ng-required="true" placeholder="Repeat Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit"><span>Register</span></button>
+    </form>

@@ -1,0 +1,42 @@
+<h2>All files </h2>
+<hr>
+
+<div class="container files-list-section col-lg-9">
+	<table ng-table="tableParams" class="table table-striped">
+	    <tr ng-repeat="file in files| filter:query">
+	    	<td header="'ng-table/headers/checkbox.html'">
+	    		<input type="checkbox" ng-model="allfiles.selected[file.id]">
+	    	</td>
+	        <td data-title="'Name'"><a href="#/file/{{file.id}}">{{file.name}}</a></td>
+	        <td data-title="'Date'">{{file.date}}</td>
+	        <td data-title="'Status'">{{file.status}}</td>
+	     	<td data-title="'Actions'">
+		     	<div class="btn-group">
+		     		<button type="button" class="btn btn-default dropdown-toggle" 
+		     		data-toggle="dropdown"><i class="fa fa-cog"></i> <span class="caret"></span>
+		     		</button>
+		     		<ul class="dropdown-menu" role="menu">
+						<li><a ng-click="edit()" href="">Edit</a></li>
+						<li><a href="#">Classify</a></li>
+						<li><a href="#">Delete</a></li>
+		     		</ul>
+		     	</div>
+		     </td>
+	    </tr>
+	</table>
+</div>
+
+<script type="text/ng-template" id="ng-table/headers/checkbox.html">
+        <input type="checkbox" ng-model="allfiles.checked" id="select_all" name="filter-checkbox" value="" />
+</script>
+
+<div class="container file-actions-sec col-lg-3">
+	<div class="form-group"><input type="textbox" ng-model="query" class="form-control"></div>
+
+	<!-- File actions -->
+	<button class="btn btn-default btn-lg fileupload btn-block">Upload files
+		<input type="file" multiple ng-file-select="onFileSelect($files)" class="upload" />
+	</button>
+	<button class="btn btn-default btn-lg btn-block" ng-disabled="showLink()">Link files</button>
+	<button class="btn btn-default btn-lg btn-block" ng-disabled="showDelete()">Delete files</button>
+</div>
