@@ -1,0 +1,58 @@
+<form class="form-search" ng-submit="search()">
+	<div class="row form-group">
+		<div class="col-sm-7 col-sm-offset-1">
+			<input type="text" ng-model="credentials.email" class="input-block-level form-control txtSearch" placeholder="Search for an RTI file...">
+			<button class="btn-search" type="submit">
+				<i class="fa fa-search fa-fs"></i>
+			</button>
+
+			<a id="advanced_search" ng-click="goAdvanced = !goAdvanced" class="">Advanced Search</a>
+		</div>
+		<div class="col-sm-1">
+			<span class = "txtOr">or</span>
+		</div>
+		<div class="col-sm-2">
+			<button class="btn-browse" type="submit">
+				Browse
+			</button>
+		</div>
+		
+		<div class="col-sm-7 col-sm-offset-1" id="adv_form"  ng-show="goAdvanced">
+		<form class="form-horizontal" >
+			<label class="control-label" for="name">Name</label> 
+			<input id="name" name="name" class="form-control"  type="text">
+
+			<label class="control-label" for="designation">Designation</label>
+			<select id="designation" name="designation" class="form-control" >
+				<option>Option one</option>
+				<option>Option two</option>
+			</select>
+
+			<label class="control-label" for="department">Department</label>
+			<select id="department" name="department" class="form-control" >
+				<option>Option one</option>
+				<option>Option two</option>
+			</select>
+
+			<label class="control-label" for="area">Area</label>
+			<select id="area" name="area" class="form-control" >
+				<option>Option one</option>
+				<option>Option two</option>
+			</select>
+
+			<label class="control-label" for="state">State</label>
+			<select id="state" name="state" class="form-control" >
+				<option>Option one</option>
+				<option>Option two</option>
+			</select>
+			<button id="avd_sub" class="btn-browse" type="submit">
+				Search
+			</button>
+		</form>
+		
+
+	</div>
+	
+	</div>
+	
+</form>
