@@ -27,6 +27,12 @@ angular.module('myApp', [
         }
     );
     
+    $routeProvider.when('/contributors', 
+        {
+            templateUrl: 'partials/contributors.tpl.html',
+        }
+    );
+    
   
     
      $routeProvider.when('/search', 

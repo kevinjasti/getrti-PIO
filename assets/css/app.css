@@ -666,20 +666,49 @@ A.showMoreActive {
 }
 
 #advanced_search::selection {
-background: transparent;
-color: #AE4F2F;
+	background: transparent;
+	color: #AE4F2F;
 }
 
-#advanced_search:hover{
+#advanced_search:hover {
 	text-decoration: none;
 	color: #AE4F2F;
 	cursor: pointer;
 }
 
-#adv_form .control-label{
+#adv_form .control-label {
 	padding: 20px 0 10px 0;
 }
 
-#avd_sub{
+#avd_sub {
 	margin-top: 35px;
+}
+
+.social_icons img {
+	width: 27px;
+	margin: 10px;
+}
+
+.contributor {
+	margin: 30px 0 0 0;
+	padding: 20px;
+	border-radius: 7px;
+	background: white;
+}
+
+.social_icons {
+	margin: 0;
+}
+
+.social_icons a {
+	cursor: pointer;
+}
+
+.thumbnail:hover{
+	background-color: #AE4F2F;
+
+}
+
+.thumbnail:hover p,.thumbnail:hover h3{
+	color: white;
 }
